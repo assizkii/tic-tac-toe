@@ -2,7 +2,12 @@
 <?php
 
 $options = getopt('', ["id::"]);
-$gameId = (string) $options['id'];
+if (isset($options['id'])) {
+    $gameId = (string) $options['id'];
+} else {
+    $gameId = null;
+}
+
 
 include (__DIR__ . '/TicTacGame.php');
 
